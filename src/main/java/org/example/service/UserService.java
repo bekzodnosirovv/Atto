@@ -1,19 +1,23 @@
 package org.example.service;
 
-import lombok.Getter;
-import lombok.Setter;
+
 import org.example.Enums.ComponentStatus;
 import org.example.dto.Card;
 import org.example.dto.Profile;
 import org.example.dto.Terminal;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Setter
-@Getter
+
+@Service
 public class UserService {
+    @Autowired
     private CardService cardService;
+    @Autowired
     private TerminalService terminalService;
+    @Autowired
     private TransactionService transactionService;
 
     public void addCardSV(Profile profile, Integer cardNumber) {

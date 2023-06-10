@@ -10,14 +10,18 @@ import org.example.dto.Profile;
 import org.example.dto.Terminal;
 import org.example.dto.Transaction;
 import org.example.repository.TransactionRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Setter
-@Getter
+
+
+@Service
 public class TransactionService {
+    @Autowired
     private TransactionRepository transactionRepository;
 
     public void trReFill_SV(Card card, double balance) {

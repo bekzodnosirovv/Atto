@@ -7,13 +7,16 @@ import org.example.container.ComponentContainer;
 import org.example.dto.Card;
 import org.example.dto.Profile;
 import org.example.repository.CardRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
-@Setter
-@Getter
+
+@Service
 public class CardService {
+    @Autowired
     private CardRepository cardRepository;
 
     public void createdCardSV(Integer cardNumber, LocalDate exp_date) {

@@ -5,13 +5,14 @@ import lombok.Setter;
 import org.example.Enums.ComponentStatus;
 import org.example.dto.Terminal;
 import org.example.util.DataBaseConnection;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
 
-@Setter
-@Getter
+
+@Repository
 public class TermRepository {
 
     public Terminal getTermRP(Integer termNumber) {

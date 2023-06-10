@@ -1,8 +1,6 @@
 package org.example.controller;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+
 import lombok.Setter;
 import org.example.container.ComponentContainer;
 import org.example.dto.Profile;
@@ -10,9 +8,10 @@ import org.example.service.UserService;
 import org.example.util.ActionUtil;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Controller;
 
 @Setter
-@Getter
+@Controller
 public class UserController {
     ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
     private UserService userService = (UserService) context.getBean("userService");

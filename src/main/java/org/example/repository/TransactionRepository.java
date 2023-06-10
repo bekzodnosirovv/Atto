@@ -7,14 +7,14 @@ import org.example.container.ComponentContainer;
 import org.example.dto.Profile;
 import org.example.dto.Transaction;
 import org.example.util.DataBaseConnection;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-@Setter
-@Getter
+@Repository
 public class TransactionRepository {
 
     public List<StringBuilder> getProfTrListRP(String phone) {

@@ -4,11 +4,13 @@ import org.example.Enums.ComponentStatus;
 import org.example.dto.Card;
 import org.example.dto.Profile;
 import org.example.util.DataBaseConnection;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
 
+@Repository
 public class CardRepository {
 
     public Card getCardRP(Integer cardNumber) {

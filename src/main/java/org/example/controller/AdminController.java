@@ -1,17 +1,23 @@
 package org.example.controller;
 
 
-import lombok.Getter;
-import lombok.Setter;
 import org.example.UtilPanel.*;
 import org.example.util.ActionUtil;
-@Setter
-@Getter
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+
+@Controller
 public class AdminController {
+    @Autowired
     private AdminCardPanel adminCardPanel;
+    @Autowired
     private AdminTerminalPanel adminTerminalPanel;
+    @Autowired
     private AdminProfilePanel adminProfilePanel;
+    @Autowired
     private AdminTransactionPanel adminTransactionPanel;
+    @Autowired
     private AdminStatisticPanel adminStatisticPanel;
 
     public void start() {

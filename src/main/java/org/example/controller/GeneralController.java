@@ -6,8 +6,10 @@ import org.example.service.GeneralService;
 import org.example.util.ActionUtil;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Controller;
 
 @Setter
+@Controller
 public class GeneralController {
 
     ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");

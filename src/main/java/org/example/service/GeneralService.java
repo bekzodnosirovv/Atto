@@ -11,13 +11,17 @@ import org.example.dto.Profile;
 import org.example.repository.ProfileRepository;
 import org.example.util.ActionUtil;
 import org.example.util.PhoneCheckUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-@Setter
-@Getter
-@NoArgsConstructor
+
+
+@Service
 public class GeneralService {
+    @Autowired
     AdminController adminController;
+    @Autowired
     ProfileRepository profileRepository;
 
     public void logHandleSV(String phone, String password) {

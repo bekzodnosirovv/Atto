@@ -5,12 +5,16 @@ import lombok.Setter;
 import org.example.Enums.ComponentStatus;
 import org.example.dto.Terminal;
 import org.example.repository.TermRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
-@Setter
-@Getter
+
+
+@Service
 public class TerminalService {
+    @Autowired
     private TermRepository termRepository;
     public Terminal getTermSV(Integer termNumber) {
         return termRepository.getTermRP(termNumber);

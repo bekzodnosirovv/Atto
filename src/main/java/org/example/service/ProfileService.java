@@ -6,12 +6,16 @@ import org.example.Enums.ComponentStatus;
 import org.example.Enums.ProfileRole;
 import org.example.dto.Profile;
 import org.example.repository.ProfileRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Setter
-@Getter
+
+
+@Service
 public class ProfileService {
+    @Autowired
     ProfileRepository profileRepository;
 
     public void getProfListSV() {

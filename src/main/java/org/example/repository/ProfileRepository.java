@@ -6,12 +6,13 @@ import org.example.Enums.ComponentStatus;
 import org.example.Enums.ProfileRole;
 import org.example.dto.Profile;
 import org.example.util.DataBaseConnection;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
-@Setter
-@Getter
+
+@Repository
 public class ProfileRepository {
     public Profile getProfileRP(String phone) {
         Profile profile = null;

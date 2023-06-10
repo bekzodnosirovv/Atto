@@ -1,15 +1,19 @@
 package org.example.UtilPanel;
 
-import lombok.Getter;
-import lombok.Setter;
+
 import org.example.service.CardService;
 import org.example.service.TransactionService;
 import org.example.util.ActionUtil;
-@Setter
-@Getter
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class AdminTransactionPanel {
+    @Autowired
     private TransactionService transactionService;
+    @Autowired
     private CardService cardService;
+
     public void start() {
         while (true) {
             menu();

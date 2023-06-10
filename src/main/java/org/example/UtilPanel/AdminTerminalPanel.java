@@ -1,18 +1,17 @@
 package org.example.UtilPanel;
 
-import lombok.Getter;
-import lombok.Setter;
 import org.example.container.ComponentContainer;
 import org.example.service.TerminalService;
 import org.example.util.ActionUtil;
 import org.example.util.StatusChooseUtil;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-@Setter
-@Getter
+@Component
 public class AdminTerminalPanel {
+    @Autowired
     private TerminalService terminalService;
+    @Autowired
     private StatusChooseUtil statusChooseUtil;
 
     public void start() {

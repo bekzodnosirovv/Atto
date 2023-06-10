@@ -1,27 +1,28 @@
 package org.example.controller;
 
-
-import lombok.Setter;
 import org.example.container.ComponentContainer;
 import org.example.dto.Profile;
 import org.example.service.UserService;
 import org.example.util.ActionUtil;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-@Setter
+
 @Controller
+@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class UserController {
-    ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
-    private UserService userService = (UserService) context.getBean("userService");
+    @Autowired
+    private UserService userService;
     private Profile profile;
 
-    public UserController(Profile profile) {
+    public void setProfile(Profile profile) {
         this.profile = profile;
+        start();
     }
 
-    public void start() {
+    private void start() {
         System.out.println("*** User Menu ***");
         while (true) {
             userMenu();

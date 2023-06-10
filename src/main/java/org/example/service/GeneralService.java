@@ -20,9 +20,11 @@ import java.time.LocalDateTime;
 @Service
 public class GeneralService {
     @Autowired
-    AdminController adminController;
+    private AdminController adminController;
     @Autowired
-    ProfileRepository profileRepository;
+    private UserController userController;
+    @Autowired
+    private ProfileRepository profileRepository;
 
     public void logHandleSV(String phone, String password) {
         if (!PhoneCheckUtil.checkPhone(phone)) {
@@ -49,9 +51,10 @@ public class GeneralService {
                     2. User Menu""");
             switch (ActionUtil.getAction()) {
                 case "1" -> adminController.start();
-                case "2" -> new UserController(profile).start();
+                case "2" -> userController.setProfile(profile);
             }
-        } else new UserController(profile).start();
+        }
+        userController.setProfile(profile);
     }
 
     public void regHandleSV(String name, String surname, String phone, String password) {
@@ -67,7 +70,7 @@ public class GeneralService {
         profile = new Profile(name, surname, phone, password, LocalDateTime.now(), ComponentStatus.ACTIVE, ProfileRole.USER);
         if (profileRepository.addProfileRP(profile)) {
             System.out.println("<< Success >>");
-            new UserController(profile).start();
+            userController.setProfile(profile);
         } else System.out.println("Error. Try again.");
     }
 

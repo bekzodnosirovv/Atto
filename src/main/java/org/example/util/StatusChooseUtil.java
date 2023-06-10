@@ -2,7 +2,9 @@ package org.example.util;
 
 import org.example.Enums.ComponentStatus;
 import org.example.container.ComponentContainer;
+import org.springframework.stereotype.Component;
 
+@Component
 public class StatusChooseUtil {
     public String get() {
         System.out.println("Enter status: \n1. ACTIVE\n2. NOT_ACTIVE\n3. BLOCK");

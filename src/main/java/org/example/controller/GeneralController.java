@@ -1,19 +1,17 @@
 package org.example.controller;
 
-import lombok.Setter;
 import org.example.container.ComponentContainer;
 import org.example.service.GeneralService;
 import org.example.util.ActionUtil;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-@Setter
+
 @Controller
 public class GeneralController {
 
-    ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
-    GeneralService generalService = (GeneralService) context.getBean("generalService");
+    @Autowired
+    GeneralService generalService;
 
     public void start() {
         System.out.println("**** ATTO ****\n");
